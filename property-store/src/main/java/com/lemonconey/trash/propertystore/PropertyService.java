@@ -11,11 +11,15 @@ public class PropertyService {
         put("status", "ready");
     }};
 
-    public void update(Map<String, Object> properties) {
+    public void create(Map<String, Object> properties) {
         propertyStore.putAll(properties);
     }
 
     public Map<String, Object> getAll() {
         return propertyStore;
+    }
+
+    public void update(Map<String, Object> properties) {
+        propertyStore = new HashMap<>(properties);
     }
 }
